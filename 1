@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+void swap(char *x,char *y)
+{
+	char b[20];
+		strcpy(b,y);
+		strcpy(y,x);
+		strcpy(x,b); 
+}
+int main()
+{
+	char a[3][20];
+	int i,j;
+	for(i=0;i<3;i++){
+		gets(a[i]);
+	} 
+	for(i=0;i<3;i++)
+	for(j=1;j<3;j++){
+		if( (strcmp(a[j],a[i]))<0 &&j>i){
+			swap(a[j],a[i]);
+		}
+	}
+	for(i=0;i<3;i++){
+		puts(a[i]);
+	}
+	return 0;
+}
